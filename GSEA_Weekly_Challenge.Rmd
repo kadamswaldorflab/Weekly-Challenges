@@ -46,7 +46,7 @@ What is the name of the section that has all the gene names/symbols?
 Hint: The answer should follow this format: GOBP$___$___ 
 
 
-Use the space below to check what type of data it is (numeric, character, logical, integer?) You can use class() to see what type of data it is. If it is not a data frame, change it into a data frame and give it the variable name 'gene_set'.
+Use the space below to check what type of data it is (numeric, character, logical, integer?) You can use class() to see what type of data it is. If it is not a data frame, change it into a data frame and assign it to the variable name 'gene_set'.
 
 ```{r data frame}
 gene_set <- 
@@ -61,7 +61,7 @@ common_genes <-
 
 How many genes are common to both data sets? 
 
-Now we'll use the column of gene names to make that the row names. 
+Now we'll use the column of gene names to make that the row names for the dataframe in common_genes. 
 
 ```{r row names}
 
@@ -90,7 +90,8 @@ Hint: Remember that specifying what we want on the x- and y-axis needs to be spe
 gsea1 <- 
 ```
 
-Next, let's add onto gsea1 to specify what colors we want to be used for the fill. Typically in GSEA, blue is used for downregulated genes while red is used for upregulated genes. White is used for genes that are not differentially expressed between groups. Use scale_fill_gradient2() to change the coloring.
+Next, let's add onto gsea1 to specify what colors we want to be used for the fill. Typically in GSEA, blue is used for downregulated genes while red is used for upregulated genes. White is used for genes that are not differentially expressed between groups (genes that have a differential expression of 0). 
+Hint: Use scale_fill_gradient2() to change the coloring.
 
 ```{r ggplot heatmap}
 gsea2 <- 
