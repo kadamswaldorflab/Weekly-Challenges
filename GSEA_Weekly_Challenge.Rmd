@@ -56,15 +56,21 @@ Next, we need to check if all the genes that are in the gene set are actually pa
 Hint: This is the syntax for the merge function: merge(df1, df2, by.x = col name that has gene names in df1, by.y = col name that has gene names in df2)
 
 ```{r merge df}
-
+common_genes <- 
 ```
 
 How many genes are common to both data sets? 
 
-Now we'll use the column of gene names to make that the row names. Thinking ahead to our heatmap, 190 genes is a lot to look at at once, so let's subset the data so that we're only looking at the first 35 genes (aka first 35 rows) and all the columns. 
+Now we'll use the column of gene names to make that the row names. 
 
-```{r row names + subset}
+```{r row names}
 
+```
+
+Thinking ahead to our heatmap, 190 genes is a lot to look at at once, so let's subset the data so that we're only looking at the first 35 genes (aka first 35 rows) and all the columns. 
+
+```{r subset}
+subset_comgenes <- 
 ```
 
 In order to use this data to create a heatmap in ggplot, we need to make it so that the dataframe has condensed columns. Use the gather() function to do this. This function "gathers" all the data and puts it into a condensed number of columns that we specify. Keep the column that has all the gene names, then make 2 new columns that have the sample name and value (number). 
@@ -72,7 +78,7 @@ Hint: Make sure to specify which columns from subset_comgenes should be included
 ** This part is confusing, let me know if you need some help!
 
 ```{r gather}
-
+subset_comgenes <- 
 ```
 
 We can now use this dataframe (subset_comgenes) to create a heatmap in ggplot to understand more about the gene regulation differences in our data.
@@ -81,19 +87,19 @@ Create a ggplot using geom_tile(). Put the samples on the x axis and gene names 
 Hint: Remember that specifying what we want on the x- and y-axis needs to be specified within aes()
 
 ```{r ggplot heatmap}
-
+gsea1 <- 
 ```
 
 Next, let's add onto gsea1 to specify what colors we want to be used for the fill. Typically in GSEA, blue is used for downregulated genes while red is used for upregulated genes. White is used for genes that are not differentially expressed between groups. Use scale_fill_gradient2() to change the coloring.
 
 ```{r ggplot heatmap}
-
+gsea2 <- 
 ```
 
 Finally, add onto gsea2 by adding a title and x- and y-axis labels. You can label the legend for the color by using fill="l2f change" within labs().
 
 ```{r ggplot heatmap}
-
+gsea3 <- 
 ```
 
 Most of the genes look red, meaning they are upregulated. However, one of the genes is downregulated (blue) in most samples, what is the name of this gene? 
